@@ -2,7 +2,10 @@ import os
 import subprocess
 import tempfile
 import numpy as np
-  
+
+__all__ = ['global_parameterization', 'local_polar_parameterization',
+           'spherical_parameterization']
+
 #------------------------------------------------------------------------------
 def global_parameterization(vertices, triangles, method='meanvalue', 
                             rigidity=1000):
