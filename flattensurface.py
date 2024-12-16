@@ -9,14 +9,15 @@ def global_parameterization(vertices, triangles, method='meanvalue',
     """Triangulated surface parameterization onto a circular or free-border
     two-dimensional parameter space. The surface must be oriented and must have
     at least one boundary.
-    https://doc.cgal.org/latest/Surface_mesh_parameterization/group__PkgSurfaceMeshParameterizationMethods.html
+    https://doc.cgal.org/latest/Surface_mesh_parameterization
 
     The library CGAL must be installed.
 
     Args:
         vertices (nv-by-3 float array): vertex positions
         triangles (nt-by-3 int array): vertex indices for each triangle
-        method (str): 'authalic' (discrete authalic, Desbrun et al.),
+        method (str): 
+            'authalic' (discrete authalic, Desbrun et al.),
             'barycentric' (Tutte barycentric mapping),
             'conformal' (discrete conformal map, Eck et al.),
             'meanvalue' (mean value coordinates, Floater et al.)
@@ -120,7 +121,7 @@ def spherical_parameterization(vertices, triangles, niter=50):
 
 #------------------------------------------------------------------------------
 def write_off(file, vertices, triangles):
-    """Export mesh in OFF format (ASCII)
+    """Export mesh in a simplified OFF format (ASCII)
 
     Args:
         file (str or file): file name or file object
@@ -143,7 +144,7 @@ def write_off(file, vertices, triangles):
 
 #------------------------------------------------------------------------------
 def read_off(file):
-    """Import mesh in OFF format (ASCII)
+    """Import mesh in a simplified OFF format (ASCII)
     does not implement the full specification; used only for testing
 
     Args:
