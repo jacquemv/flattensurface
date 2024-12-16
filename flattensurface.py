@@ -100,8 +100,8 @@ def spherical_parameterization(vertices, triangles, niter=50):
         nv-by-3 array: cartesian coordinates of the vertices on the sphere
     """
     nv = vertices.shape[0]
-    temptri = '_sphermap.tri'
-    write_tri(temptri, vertices, triangles)
+    temptri = '_sphermap.off'
+    write_off(temptri, vertices, triangles)
     with open('_sphermap.config', 'wt') as file:
         file.write(temptri + '\n' + str(niter))
     path = os.path.abspath(__file__)
@@ -181,22 +181,3 @@ def write_obj(file, vertices, triangles):
     np.savetxt(file, triangles+1, delimiter=' ', fmt='f %d %d %d')
     if closefile:
         file.close()
-
-#-------------------------------------------------------------------------------
-def write_tri(filename, vertices, triangles):
-    """Write a triangulated surface file
-
-    Args:
-        fname (str): file name
-        vertices (nv-by-3 float array): vertex positions
-        triangles (nt-by-3 int array): vertex indices for each triangle
-    """
-    with open(filename, 'wt') as file:
-        file.write(str(vertices.shape[0])+'\n')
-        np.savetxt(file, np.column_stack((1+np.arange(vertices.shape[0]), 
-                                          vertices)),
-                   fmt='%d %.5f %.5f %.5f')
-        file.write(str(triangles.shape[0])+'\n')
-        np.savetxt(file, np.column_stack((1+np.arange(triangles.shape[0]), 
-                                          1+triangles)),
-                   fmt='%d %d %d %d')

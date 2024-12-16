@@ -24,7 +24,6 @@ niter = round(str2double(fgetl(fid)));
 fclose(fid);
 
 
-
 confs.MeshGridSize = 50;
 confs.MaxSPHARMDegree = 6;
 confs.Tolerance = 2;
@@ -35,7 +34,7 @@ confs.t_major = 'x';
 confs.SelectDiagonal = 'ShortDiag';
 
 
-[VER,ITRI] = loadtri(fname);
+[VER,ITRI] = read_off(fname);
 [VER2, poles, dateline] = spharm_init_param_cald(VER, ITRI);
 [VER3, ITRI3, VERspher] = spharm_smooth_cald(VER, ITRI, VER2, confs);
 
