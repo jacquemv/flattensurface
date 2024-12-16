@@ -1,0 +1,7 @@
+cgal/parameterize
+openmesh/dgpc
+sphermap/spharm_local_smoothing
+
+__pycache__/
+*.py[cod]
+*$py.class
