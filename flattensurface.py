@@ -87,6 +87,9 @@ def local_polar_parameterization(vertices, triangles, pole, rmax=None):
 def spherical_parameterization(vertices, triangles, niter=50):
     """Project a triangulated surface onto a sphere using the Spherical
     Harmonic Modeling and Analysis Toolkit
+    https://www.med.upenn.edu/shenlab/spharm-mat.html
+    Shen L, and Makedon FS. Spherical mapping for processing of 3-D closed 
+    surfaces. Image and Vision Computing, 24(7): 743-761, 2006.
 
     Requires octave and lapack; creates temporary files _sphermap* in the
     working directory
