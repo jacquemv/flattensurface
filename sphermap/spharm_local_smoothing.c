@@ -61,6 +61,8 @@ available at http://orion.math.iastate.edu/burkardt/c_src/geometryc/geometryc.ht
 #define BLASCALL(f) f ## _
 #endif
 
+/* solve LLS using QR or LQ factorization (from liblapack )*/
+extern void BLASCALL(dgels)(char*, int*, int*, int*, double*, int*, double*, int*, double*, int*, int*);
 
 
 /* for calculate metric   */
@@ -261,8 +263,6 @@ int RCOND; /* if RCOND<0, machine precision is used instead    */
 
 extern SMOPARAM SPRM; /* parameter for smoothing   */
 
-/*extern void dgels_();*/  /* solve LLS using QR or LQ factorization */
-extern void BLASCALL(dgels)();  /* solve LLS using QR or LQ factorization */
 
 /*******************************************************************************************************/
 
